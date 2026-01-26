@@ -155,42 +155,54 @@ Before creating the skill, search the web for current information when:
 
 ### Step 4: Structure the Skill
 
+**CRITICAL - CSO (Claude Search Optimization):**
+The description field determines whether Claude finds and loads your skill.
+- Start with "Use when:" to focus on triggers
+- Include specific symptoms, error messages, contexts
+- NEVER summarize what the skill does or its workflow
+- Keep under 500 characters
+
+**Why this matters:** Testing revealed that descriptions summarizing workflow cause Claude to follow the description instead of reading the full skill. A description saying "validates and creates files" caused Claude to skip the skill body entirely.
+
 Create a new skill with this structure:
 
 ```markdown
 ---
 name: [descriptive-kebab-case-name]
 description: |
-  [Precise description including: (1) exact use cases, (2) trigger conditions like 
-  specific error messages or symptoms, (3) what problem this solves. Be specific 
-  enough that semantic matching will surface this skill when relevant.]
-author: [original-author or "Claude Code"]
-version: 1.0.0
-date: [YYYY-MM-DD]
+  Use when: (1) [specific trigger condition], (2) [symptom or error message],
+  (3) [context that signals this skill applies]. Include keywords users would
+  naturally say. NEVER summarize what the skill does - only when to use it.
 ---
 
 # [Skill Name]
 
-## Problem
-[Clear description of the problem this skill addresses]
+## Overview
+What is this? Core principle in 1-2 sentences.
 
-## Context / Trigger Conditions  
-[When should this skill be used? Include exact error messages, symptoms, or scenarios]
+## When to Use
+[Bullet list with SYMPTOMS and use cases]
+
+## When NOT to Use
+[Explicit anti-patterns - when this skill does NOT apply]
 
 ## Solution
 [Step-by-step solution or knowledge to apply]
 
+## Quick Reference
+[Table or bullets for scanning common operations]
+
+## Common Mistakes
+[What goes wrong + fixes, rationalization table if discipline skill]
+
 ## Verification
 [How to verify the solution worked]
-
-## Example
-[Concrete example of applying this skill]
 
 ## Notes
 [Any caveats, edge cases, or related considerations]
 
 ## References
-[Optional: Links to official documentation, articles, or resources that informed this skill]
+[Optional: Links to official documentation or resources]
 ```
 
 ### Step 5: Write Effective Descriptions
