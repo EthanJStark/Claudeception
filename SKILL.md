@@ -15,9 +15,6 @@ allowed-tools:
   - WebFetch
   - Skill
   - AskUserQuestion
-  - TaskCreate
-  - TaskUpdate
-  - TaskList
 ---
 
 # Claudeception
