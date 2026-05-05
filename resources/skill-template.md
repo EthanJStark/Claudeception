@@ -6,9 +6,6 @@ description: |
   (2) Specific trigger conditions - exact error messages, symptoms, scenarios
   (3) Key technologies/frameworks involved
   Use phrases like "Use when:", "Helps with:", "Solves:"]
-author: Claude Code
-version: 1.0.0
-date: YYYY-MM-DD
 ---
 
 # [Skill Name - Human Readable Title]

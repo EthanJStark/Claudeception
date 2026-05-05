@@ -23,8 +23,6 @@ description: |
   Must be precise for semantic matching. Include:
   (1) exact use cases, (2) trigger conditions like error messages,
   (3) what problem this solves
-author: Claude Code
-version: 1.0.0
 allowed-tools:
   - Read
   - Write

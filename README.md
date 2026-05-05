@@ -11,13 +11,13 @@ This skill fixes that. When Claude Code discovers something non-obvious (a debug
 **User-level (recommended)**
 
 ```bash
-git clone https://github.com/blader/Claudeception.git ~/.claude/skills/claudeception
+git clone https://github.com/EthanJStark/Claudeception.git ~/.claude/skills/claudeception
 ```
 
 **Project-level**
 
 ```bash
-git clone https://github.com/blader/Claudeception.git .claude/skills/claudeception
+git clone https://github.com/EthanJStark/Claudeception.git .claude/skills/claudeception
 ```
 
 ### Step 2: Set up the nudge hook (recommended)
@@ -104,9 +104,6 @@ description: |
   Fix for PrismaClientKnownRequestError: Too many database connections 
   in serverless environments (Vercel, AWS Lambda). Use when connection 
   count errors appear after ~5 concurrent requests.
-author: Claude Code
-version: 1.0.0
-date: 2024-01-15
 ---
 
 # Prisma Connection Pool Exhaustion

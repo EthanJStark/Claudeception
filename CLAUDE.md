@@ -25,7 +25,7 @@ There are no build, test, or lint commands because this is documentation and con
 **Skill Template (`resources/skill-template.md`)**
 - Standard structure for all extracted skills
 - Required sections: Problem, Context/Trigger Conditions, Solution, Verification, Example, Notes
-- YAML frontmatter with name, description, author, version, date
+- YAML frontmatter with name, description, and supported spec fields (allowed-tools, etc.)
 
 **Examples (`examples/`)**
 - `nextjs-server-side-error-debugging/`: Server-side errors not appearing in browser console
@@ -49,9 +49,6 @@ description: |
   Precise description for semantic matching. Must include:
   (1) exact use cases, (2) trigger conditions (error messages, symptoms),
   (3) what problem this solves
-author: Claude Code
-version: 1.0.0
-date: YYYY-MM-DD
 ---
 
 # [Skill Name]
@@ -163,7 +160,7 @@ Skills evolve through these stages:
 3. **Deprecation**: Mark when underlying tools/patterns change
 4. **Archival**: Remove when no longer relevant
 
-Version numbers and dates in YAML frontmatter track this lifecycle.
+Skill lifecycle stages are tracked in the Notes section and external changelogs, not via frontmatter fields.
 
 ## Academic Foundation
 
