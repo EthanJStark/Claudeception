@@ -83,8 +83,9 @@ cover at least the two or three most common framings.
 
 ## Token efficiency
 
-- Keep the description under ~500 characters. The budget is tight because
-  Claude loads every skill's description at startup.
+- Keep the description under 1,536 characters (the combined `description` +
+  `when_to_use` spec cap). Budget is shared, so lean is better — aim for
+  ~500 characters to leave room for a `when_to_use` field if needed.
 - Put the highest-signal content first — error messages and framework names
   before prose.
 - Move heavy reference material to separate files (this repo's

@@ -78,6 +78,11 @@ What pain point does this solve? Why is it non-obvious?]
 ---
 
 <!-- 
+Frontmatter note: only `name`, `description`, and supported spec fields
+(e.g. `allowed-tools`, `when_to_use`) are recognized. Do NOT add
+`author`, `version`, or `date` — they are silently ignored and teach
+readers an incorrect schema.
+
 Extraction Checklist (remove before saving):
 - [ ] Name is descriptive and uses kebab-case
 - [ ] Description includes specific error messages/symptoms
