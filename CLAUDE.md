@@ -6,6 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a **Claude Code skill repository**, not a traditional software project. It contains:
 - A skill definition (`SKILL.md`) that teaches Claude Code to extract and preserve learned knowledge
+- Reference files (`references/`) that extend SKILL.md with deep-dive content loaded on demand
 - Templates for creating new skills (`resources/`)
 - Example skills demonstrating proper format (`examples/`)
 - Hook scripts for automatic activation (`scripts/`)
@@ -37,6 +38,17 @@ There are no build, test, or lint commands because this is documentation and con
 - Bash script that injects reminder text into Claude Code sessions
 - Prompts evaluation after each user request for extractable knowledge
 - Installed in `~/.claude/hooks/` and referenced in `~/.claude/settings.json`
+
+**Reference Files (`references/`)**
+- Deep-dive content progressively loaded when the core SKILL.md signals relevance
+- Three files: `cso.md` (description-writing), `extraction-process.md` (step-by-step workflow + Step 0 engagement triggers + retrospective mode), `quality-and-lifecycle.md` (gates, mistakes, lifecycle)
+- Plain markdown; no YAML frontmatter (not independently discoverable skills)
+
+**Note on `resources/` vs `references/`:**
+`resources/` holds static authoring aids (template for skill authors, academic
+bibliography) — not loaded at runtime. `references/` holds progressive-disclosure
+content loaded on demand by the core skill during a session. The two directories
+are intentionally distinct; do not conflate them.
 
 ### Skill File Format
 

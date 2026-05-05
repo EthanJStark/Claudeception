@@ -9,6 +9,7 @@ Claudeception is a **Claude Code skill** for continuous learning—it enables Cl
 ## Key Files
 
 - `SKILL.md` — The main skill definition (YAML frontmatter + instructions). This is what Claude Code loads.
+- `references/` — Deep-dive content loaded on demand by the core skill
 - `resources/skill-template.md` — Template for creating new skills
 - `examples/` — Sample extracted skills demonstrating proper format
 
