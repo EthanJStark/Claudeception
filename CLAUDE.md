@@ -15,6 +15,20 @@ The plugin manifest lives at `.claude-plugin/plugin.json`.
 
 There are no build, test, or lint commands because this is documentation and configuration, not compiled code.
 
+## Publishing / Releasing
+
+Every change to this plugin that should reach users requires a semver version bump and a push to main. The marketplace syncs from this repo.
+
+**Workflow:**
+1. Make edits in `~/dev/claude-code-resources/Claudeception` (this repo).
+2. Bump the `version` field in `.claude-plugin/plugin.json` using semver:
+   - `patch` (e.g. `1.0.0` → `1.0.1`): bug fixes, wording improvements, typos
+   - `minor` (e.g. `1.0.0` → `1.1.0`): new features, new sections, new examples
+   - `major` (e.g. `1.0.0` → `2.0.0`): breaking changes to skill format or behavior
+3. Commit and push to `main`.
+
+The marketplace source lives at `~/dev/ren/claude-code-marketplace`. Version bumps are required by marketplace conventions — changes pushed without a version bump will not be picked up by consumers.
+
 ## Architecture
 
 ### Core Components
