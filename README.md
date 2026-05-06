@@ -6,21 +6,36 @@ This skill fixes that. When Claude Code discovers something non-obvious (a debug
 
 ## Installation
 
-### Step 1: Clone the skill
+### Option A: Install as a Claude Code plugin (recommended)
 
-**User-level (recommended)**
+This repo is packaged as a plugin. Install it via the [renaissance-marketplace](https://github.com/EthanJStark/claude-code-marketplace) or any marketplace that lists it:
 
 ```bash
-git clone https://github.com/EthanJStark/Claudeception.git ~/.claude/skills/claudeception
+claude plugin marketplace add EthanJStark/claude-code-marketplace
+claude plugin install renaissance-marketplace@claudeception
+```
+
+Then restart Claude Code.
+
+### Option B: Clone as a standalone skill
+
+**User-level**
+
+```bash
+git clone https://github.com/EthanJStark/Claudeception.git /tmp/claudeception && \
+  mkdir -p ~/.claude/skills/claudeception && \
+  cp -R /tmp/claudeception/skills/claudeception/. ~/.claude/skills/claudeception/
 ```
 
 **Project-level**
 
 ```bash
-git clone https://github.com/EthanJStark/Claudeception.git .claude/skills/claudeception
+git clone https://github.com/EthanJStark/Claudeception.git /tmp/claudeception && \
+  mkdir -p .claude/skills/claudeception && \
+  cp -R /tmp/claudeception/skills/claudeception/. .claude/skills/claudeception/
 ```
 
-### Step 2: Set up the nudge hook (recommended)
+### Optional: Set up the nudge hook
 
 The skill activates via semantic matching, but a `Stop` hook adds a quiet one-line reminder once per session — after the first response — to consider running `/claudeception` if the session produced something worth saving.
 
@@ -44,7 +59,7 @@ Add the hook to your global Claude settings (`~/.claude/settings.json`):
 }
 ```
 
-If you already have a `settings.json`, merge the `hooks` key into it.
+If you installed via plugin, point the command at `${CLAUDE_PLUGIN_ROOT}/skills/claudeception/scripts/claudeception-nudge.sh` instead. If you already have a `settings.json`, merge the `hooks` key into it.
 
 ## Usage
 
@@ -121,7 +136,7 @@ description: |
 [How to confirm it worked]
 ```
 
-See `resources/skill-template.md` for the full template.
+See `skills/claudeception/resources/skill-template.md` for the full template.
 
 ## Quality Gates
 
@@ -129,7 +144,7 @@ The skill is picky about what it extracts. If something is just a documentation 
 
 ## Examples
 
-See `examples/` for sample skills:
+See `skills/claudeception/examples/` for sample skills:
 
 - `nextjs-server-side-error-debugging/`: errors that don't show in browser console
 - `prisma-connection-pool-exhaustion/`: the "too many connections" serverless problem

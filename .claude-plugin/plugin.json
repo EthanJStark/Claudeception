@@ -1,0 +1,19 @@
+{
+  "name": "claudeception",
+  "description": "Continuous learning system for Claude Code: extracts reusable knowledge from work sessions and routes each learning to the right destination — a new skill, a CLAUDE.md instruction, or an auto-memory entry.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Ethan Stark"
+  },
+  "homepage": "https://github.com/EthanJStark/Claudeception",
+  "repository": "https://github.com/EthanJStark/Claudeception",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "learning",
+    "retrospective",
+    "memory",
+    "meta-skill",
+    "knowledge-extraction"
+  ]
+}

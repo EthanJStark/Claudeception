@@ -4,11 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Type
 
-This is a **Claude Code skill repository**, not a traditional software project. It contains:
-- A skill definition (`SKILL.md`) that teaches Claude Code to extract and preserve learned knowledge
-- Templates for creating new skills (`resources/`)
-- Example skills demonstrating proper format (`examples/`)
-- Hook scripts for automatic activation (`scripts/`)
+This is a **Claude Code plugin** that ships a single skill (`claudeception`). Everything is under `skills/claudeception/`:
+- Skill definition (`skills/claudeception/SKILL.md`) that teaches Claude Code to extract and preserve learned knowledge
+- Deep-dive references (`skills/claudeception/references/`)
+- Templates for creating new skills (`skills/claudeception/resources/`)
+- Example skills demonstrating proper format (`skills/claudeception/examples/`)
+- Hook scripts for automatic activation (`skills/claudeception/scripts/`)
+
+The plugin manifest lives at `.claude-plugin/plugin.json`.
 
 There are no build, test, or lint commands because this is documentation and configuration, not compiled code.
 
@@ -16,24 +19,24 @@ There are no build, test, or lint commands because this is documentation and con
 
 ### Core Components
 
-**Skill Definition (`SKILL.md`)**
+**Skill Definition (`skills/claudeception/SKILL.md`)**
 - The main skill that Claude Code loads when activated
 - Written in YAML frontmatter + markdown format
 - Contains instructions for identifying, extracting, and structuring reusable knowledge
 - Emphasizes web research before extraction to ensure current best practices
 
-**Skill Template (`resources/skill-template.md`)**
+**Skill Template (`skills/claudeception/resources/skill-template.md`)**
 - Standard structure for all extracted skills
 - Required sections: Problem, Context/Trigger Conditions, Solution, Verification, Example, Notes
 - YAML frontmatter with name, description, and supported spec fields (allowed-tools, etc.)
 
-**Examples (`examples/`)**
+**Examples (`skills/claudeception/examples/`)**
 - `nextjs-server-side-error-debugging/`: Server-side errors not appearing in browser console
 - `prisma-connection-pool-exhaustion/`: Database connection issues in serverless
 - `typescript-circular-dependency/`: Import cycle detection and resolution
 - Each example demonstrates the complete skill format
 
-**Nudge Hook (`scripts/claudeception-nudge.sh`)**
+**Nudge Hook (`skills/claudeception/scripts/claudeception-nudge.sh`)**
 - Bash script registered as a `Stop` hook in `~/.claude/settings.json`
 - Emits a single-line reminder once per session (keyed to `session_id` via a tmpfile)
 - Silent on every subsequent turn in the same session
@@ -127,7 +130,7 @@ The skill emphasizes web research before extraction to ensure current best pract
 
 ## Working with Skills in This Repository
 
-### Modifying the Main Skill (`SKILL.md`)
+### Modifying the Main Skill (`skills/claudeception/SKILL.md`)
 
 The main skill's description field should be comprehensive enough to match multiple trigger phrases:
 - `/claudeception` command
@@ -137,7 +140,7 @@ The main skill's description field should be comprehensive enough to match multi
 
 ### Creating Example Skills
 
-Example skills in `examples/` should:
+Example skills in `skills/claudeception/examples/` should:
 - Demonstrate complete, realistic scenarios
 - Include all required sections from the template
 - Show both good trigger condition descriptions and poor ones (in commit history/docs)
@@ -145,7 +148,7 @@ Example skills in `examples/` should:
 
 ### Modifying the Nudge Hook
 
-The hook script (`scripts/claudeception-nudge.sh`) emits a one-line reminder once per session via the `Stop` event. Changes to this script affect:
+The hook script (`skills/claudeception/scripts/claudeception-nudge.sh`) emits a one-line reminder once per session via the `Stop` event. Changes to this script affect:
 - The wording of the reminder users see
 - The frequency (currently once per session, keyed to `session_id`)
 

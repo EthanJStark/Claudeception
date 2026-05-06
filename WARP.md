@@ -8,9 +8,10 @@ Claudeception is a **Claude Code skill** for continuous learning—it enables Cl
 
 ## Key Files
 
-- `SKILL.md` — The main skill definition (YAML frontmatter + instructions). This is what Claude Code loads.
-- `resources/skill-template.md` — Template for creating new skills
-- `examples/` — Sample extracted skills demonstrating proper format
+- `.claude-plugin/plugin.json` — Plugin manifest (this repo is a Claude Code plugin)
+- `skills/claudeception/SKILL.md` — The main skill definition (YAML frontmatter + instructions). This is what Claude Code loads.
+- `skills/claudeception/resources/skill-template.md` — Template for creating new skills
+- `skills/claudeception/examples/` — Sample extracted skills demonstrating proper format
 
 ## Skill File Format
 
@@ -49,4 +50,4 @@ When modifying or creating skills, ensure:
 
 ## Research Foundation
 
-The approach is based on academic work on skill libraries (Voyager, CASCADE, SEAgent, Reflexion). See `resources/research-references.md` for details.
+The approach is based on academic work on skill libraries (Voyager, CASCADE, SEAgent, Reflexion). See `skills/claudeception/resources/research-references.md` for details.
